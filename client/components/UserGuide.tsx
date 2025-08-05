@@ -289,6 +289,58 @@ export default function UserGuide({ isOpen, onClose, features = defaultFeatures 
               ))}
             </div>
           </div>
+
+        {/* Mobile Bottom Navigation */}
+        <div className="lg:hidden flex items-center justify-between p-4 border-t border-gray-700 bg-[#202020]">
+          <button
+            onClick={() => {
+              const currentIndex = features.findIndex(f => f.id === selectedFeature);
+              if (currentIndex > 0) {
+                const prevFeature = features[currentIndex - 1];
+                setSelectedFeature(prevFeature.id);
+              }
+            }}
+            disabled={features.findIndex(f => f.id === selectedFeature) === 0}
+            className="flex items-center gap-2 px-4 py-2 text-sm font-poppins text-gray-400 disabled:opacity-30 disabled:cursor-not-allowed"
+          >
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <path d="m15 18-6-6 6-6"/>
+            </svg>
+            Previous
+          </button>
+
+          <div className="flex gap-2">
+            {features.map((feature, index) => (
+              <button
+                key={feature.id}
+                onClick={() => setSelectedFeature(feature.id)}
+                className={`w-2 h-2 rounded-full transition-colors ${
+                  selectedFeature === feature.id
+                    ? 'bg-[#50BBFF]'
+                    : 'bg-gray-600 hover:bg-gray-500'
+                }`}
+                aria-label={`Go to ${feature.title}`}
+              />
+            ))}
+          </div>
+
+          <button
+            onClick={() => {
+              const currentIndex = features.findIndex(f => f.id === selectedFeature);
+              if (currentIndex < features.length - 1) {
+                const nextFeature = features[currentIndex + 1];
+                setSelectedFeature(nextFeature.id);
+              }
+            }}
+            disabled={features.findIndex(f => f.id === selectedFeature) === features.length - 1}
+            className="flex items-center gap-2 px-4 py-2 text-sm font-poppins text-gray-400 disabled:opacity-30 disabled:cursor-not-allowed"
+          >
+            Next
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <path d="m9 18 6-6-6-6"/>
+            </svg>
+          </button>
+        </div>
         </div>
       </div>
 
