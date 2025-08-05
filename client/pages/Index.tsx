@@ -11,11 +11,13 @@ export default function Index() {
         <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 font-poppins tracking-tight">
           Dashboard
           <span className="bg-gradient-to-r from-blue-400 to-cyan-300 bg-clip-text text-transparent">
-            {" "}Guide
+            {" "}
+            Guide
           </span>
         </h1>
         <p className="text-lg md:text-xl text-slate-300 mb-8 max-w-2xl mx-auto font-poppins font-light leading-relaxed">
-          Interactive tutorials and comprehensive guides to help you master your trading dashboard
+          Interactive tutorials and comprehensive guides to help you master your
+          trading dashboard
         </p>
         <button
           onClick={() => setIsGuideOpen(true)}
@@ -27,10 +29,7 @@ export default function Index() {
       </div>
 
       {/* UserGuide Modal */}
-      <UserGuide 
-        isOpen={isGuideOpen} 
-        onClose={() => setIsGuideOpen(false)}
-      />
+      <UserGuide isOpen={isGuideOpen} onClose={() => setIsGuideOpen(false)} />
     </div>
   );
 }

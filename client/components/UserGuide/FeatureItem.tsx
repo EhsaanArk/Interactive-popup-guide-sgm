@@ -1,5 +1,5 @@
-import type { FeatureSection } from './constants';
-import { playIcon } from './constants';
+import type { FeatureSection } from "./constants";
+import { playIcon } from "./constants";
 
 interface FeatureItemProps {
   feature: FeatureSection;
@@ -9,14 +9,16 @@ interface FeatureItemProps {
   onPlayVideo: (featureId: string) => void;
 }
 
-export function FeatureNavButton({ feature, isSelected, onSelect }: Pick<FeatureItemProps, 'feature' | 'isSelected' | 'onSelect'>) {
+export function FeatureNavButton({
+  feature,
+  isSelected,
+  onSelect,
+}: Pick<FeatureItemProps, "feature" | "isSelected" | "onSelect">) {
   return (
     <button
       onClick={() => onSelect(feature.id)}
       className={`block text-left text-sm font-normal font-poppins tracking-wide transition-colors ${
-        isSelected
-          ? 'text-[#50BBFF]'
-          : 'text-white hover:text-[#50BBFF]'
+        isSelected ? "text-[#50BBFF]" : "text-white hover:text-[#50BBFF]"
       }`}
     >
       {feature.title}
@@ -24,14 +26,18 @@ export function FeatureNavButton({ feature, isSelected, onSelect }: Pick<Feature
   );
 }
 
-export function FeatureContent({ feature, isHighlighted, onPlayVideo }: Pick<FeatureItemProps, 'feature' | 'isHighlighted' | 'onPlayVideo'>) {
+export function FeatureContent({
+  feature,
+  isHighlighted,
+  onPlayVideo,
+}: Pick<FeatureItemProps, "feature" | "isHighlighted" | "onPlayVideo">) {
   return (
     <div
       id={`feature-${feature.id}`}
       className={`transition-all duration-500 ${
         isHighlighted
-          ? 'bg-[#50BBFF]/5 border border-[#50BBFF]/20 rounded-lg p-3'
-          : ''
+          ? "bg-[#50BBFF]/5 border border-[#50BBFF]/20 rounded-lg p-3"
+          : ""
       }`}
     >
       <div className="flex items-start gap-5">
@@ -55,7 +61,7 @@ export function FeatureContent({ feature, isHighlighted, onPlayVideo }: Pick<Fea
             className="w-full h-full object-cover rounded-lg"
             onError={(e) => {
               const target = e.target as HTMLImageElement;
-              target.style.display = 'none';
+              target.style.display = "none";
             }}
           />
           <button

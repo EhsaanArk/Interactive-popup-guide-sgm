@@ -1,9 +1,9 @@
-import { X, Book } from 'lucide-react';
-import { defaultFeatures, type FeatureSection } from './UserGuide/constants';
-import { useUserGuide } from './UserGuide/useUserGuide';
-import VideoPlayer from './UserGuide/VideoPlayer';
-import FeatureCard from './UserGuide/FeatureCard';
-import { FeatureNavButton, FeatureContent } from './UserGuide/FeatureItem';
+import { X, Book } from "lucide-react";
+import { defaultFeatures, type FeatureSection } from "./UserGuide/constants";
+import { useUserGuide } from "./UserGuide/useUserGuide";
+import VideoPlayer from "./UserGuide/VideoPlayer";
+import FeatureCard from "./UserGuide/FeatureCard";
+import { FeatureNavButton, FeatureContent } from "./UserGuide/FeatureItem";
 
 interface UserGuideProps {
   isOpen: boolean;
@@ -11,7 +11,11 @@ interface UserGuideProps {
   features?: FeatureSection[];
 }
 
-export default function UserGuide({ isOpen, onClose, features = defaultFeatures }: UserGuideProps) {
+export default function UserGuide({
+  isOpen,
+  onClose,
+  features = defaultFeatures,
+}: UserGuideProps) {
   const {
     selectedFeature,
     highlightedFeature,

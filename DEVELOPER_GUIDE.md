@@ -64,7 +64,7 @@ Add the custom scrollbar styles to your global CSS file:
 /* Add to your global.css */
 .custom-scrollbar {
   scrollbar-width: thin;
-  scrollbar-color: #404040 #2C2C2C;
+  scrollbar-color: #404040 #2c2c2c;
 }
 
 .custom-scrollbar::-webkit-scrollbar {
@@ -72,7 +72,7 @@ Add the custom scrollbar styles to your global CSS file:
 }
 
 .custom-scrollbar::-webkit-scrollbar-track {
-  background: #2C2C2C;
+  background: #2c2c2c;
   border-radius: 4px;
 }
 
@@ -95,17 +95,20 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        'poppins': ['Poppins', 'system-ui', 'sans-serif'],
+        poppins: ["Poppins", "system-ui", "sans-serif"],
       },
     },
   },
-}
+};
 ```
 
 Add Poppins font to your HTML head:
 
 ```html
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link
+  href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+  rel="stylesheet"
+/>
 ```
 
 ## 🎯 Quick Start
@@ -113,8 +116,8 @@ Add Poppins font to your HTML head:
 ### Basic Implementation
 
 ```tsx
-import React, { useState } from 'react';
-import UserGuide from './components/UserGuide';
+import React, { useState } from "react";
+import UserGuide from "./components/UserGuide";
 
 function App() {
   const [isGuideOpen, setIsGuideOpen] = useState(false);
@@ -122,15 +125,10 @@ function App() {
   return (
     <div>
       {/* Your existing app content */}
-      <button onClick={() => setIsGuideOpen(true)}>
-        Open Guide
-      </button>
+      <button onClick={() => setIsGuideOpen(true)}>Open Guide</button>
 
       {/* UserGuide Component */}
-      <UserGuide 
-        isOpen={isGuideOpen} 
-        onClose={() => setIsGuideOpen(false)}
-      />
+      <UserGuide isOpen={isGuideOpen} onClose={() => setIsGuideOpen(false)} />
     </div>
   );
 }
@@ -139,18 +137,18 @@ function App() {
 ### With Custom Features
 
 ```tsx
-import React, { useState } from 'react';
-import UserGuide from './components/UserGuide';
-import { FeatureSection } from './components/UserGuide/constants';
+import React, { useState } from "react";
+import UserGuide from "./components/UserGuide";
+import { FeatureSection } from "./components/UserGuide/constants";
 
 const customFeatures: FeatureSection[] = [
   {
-    id: 'dashboard',
-    title: 'Dashboard Overview',
-    description: 'Get familiar with your main dashboard and key metrics.',
+    id: "dashboard",
+    title: "Dashboard Overview",
+    description: "Get familiar with your main dashboard and key metrics.",
     icon: <YourCustomIcon />,
-    thumbnail: 'https://your-image-url.com/thumbnail.jpg',
-    videoUrl: 'your-youtube-video-id'
+    thumbnail: "https://your-image-url.com/thumbnail.jpg",
+    videoUrl: "your-youtube-video-id",
   },
   // Add more features...
 ];
@@ -160,12 +158,10 @@ function App() {
 
   return (
     <div>
-      <button onClick={() => setIsGuideOpen(true)}>
-        Launch Tutorial
-      </button>
+      <button onClick={() => setIsGuideOpen(true)}>Launch Tutorial</button>
 
-      <UserGuide 
-        isOpen={isGuideOpen} 
+      <UserGuide
+        isOpen={isGuideOpen}
         onClose={() => setIsGuideOpen(false)}
         features={customFeatures}
       />
@@ -178,22 +174,22 @@ function App() {
 
 ### UserGuide Props
 
-| Prop | Type | Required | Default | Description |
-|------|------|----------|---------|-------------|
-| `isOpen` | `boolean` | ✅ | - | Controls modal visibility |
-| `onClose` | `() => void` | ✅ | - | Callback when guide is closed |
-| `features` | `FeatureSection[]` | ❌ | `defaultFeatures` | Array of feature sections |
+| Prop       | Type               | Required | Default           | Description                   |
+| ---------- | ------------------ | -------- | ----------------- | ----------------------------- |
+| `isOpen`   | `boolean`          | ✅       | -                 | Controls modal visibility     |
+| `onClose`  | `() => void`       | ✅       | -                 | Callback when guide is closed |
+| `features` | `FeatureSection[]` | ❌       | `defaultFeatures` | Array of feature sections     |
 
 ### FeatureSection Interface
 
 ```tsx
 interface FeatureSection {
-  id: string;              // Unique identifier
-  title: string;           // Feature title
-  description: string;     // Feature description
-  icon: React.ReactNode;   // Icon component
-  thumbnail: string;       // Image URL for thumbnail
-  videoUrl?: string;       // YouTube video ID (optional)
+  id: string; // Unique identifier
+  title: string; // Feature title
+  description: string; // Feature description
+  icon: React.ReactNode; // Icon component
+  thumbnail: string; // Image URL for thumbnail
+  videoUrl?: string; // YouTube video ID (optional)
 }
 ```
 
@@ -206,16 +202,26 @@ Edit `client/components/UserGuide/constants.tsx`:
 ```tsx
 export const defaultFeatures: FeatureSection[] = [
   {
-    id: 'your-feature',
-    title: 'Your Feature',
-    description: 'Description of your feature...',
+    id: "your-feature",
+    title: "Your Feature",
+    description: "Description of your feature...",
     icon: (
-      <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M10 2L13 8H18L14 12L16 18L10 15L4 18L6 12L2 8H7L10 2Z"
-              fill="#E9E9E9" stroke="#E9E9E9" strokeWidth="1"/>
+      <svg
+        width="20"
+        height="20"
+        viewBox="0 0 20 20"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M10 2L13 8H18L14 12L16 18L10 15L4 18L6 12L2 8H7L10 2Z"
+          fill="#E9E9E9"
+          stroke="#E9E9E9"
+          strokeWidth="1"
+        />
       </svg>
     ),
-    thumbnail: 'https://your-domain.com/image.jpg'
+    thumbnail: "https://your-domain.com/image.jpg",
   },
   // Add more features...
 ];
@@ -259,12 +265,12 @@ Customize the action buttons by modifying `useUserGuide.ts`:
 ```tsx
 const handleTakeTour = () => {
   // Your tour implementation
-  console.log('Starting guided tour');
+  console.log("Starting guided tour");
 };
 
 const handleKnowledgeBase = () => {
   // Your knowledge base implementation
-  window.open('https://your-docs.com', '_blank');
+  window.open("https://your-docs.com", "_blank");
 };
 ```
 
@@ -273,7 +279,7 @@ const handleKnowledgeBase = () => {
 ### Integration with Router
 
 ```tsx
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 
 function Dashboard() {
   const [showGuide, setShowGuide] = useState(false);
@@ -281,7 +287,7 @@ function Dashboard() {
 
   // Show guide for new users
   useEffect(() => {
-    const hasSeenGuide = localStorage.getItem('hasSeenGuide');
+    const hasSeenGuide = localStorage.getItem("hasSeenGuide");
     if (!hasSeenGuide) {
       setShowGuide(true);
     }
@@ -289,7 +295,7 @@ function Dashboard() {
 
   const handleGuideClose = () => {
     setShowGuide(false);
-    localStorage.setItem('hasSeenGuide', 'true');
+    localStorage.setItem("hasSeenGuide", "true");
   };
 
   return (
@@ -313,10 +319,12 @@ export function GuideProvider({ children }) {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <GuideContext.Provider value={{
-      openGuide: () => setIsOpen(true),
-      closeGuide: () => setIsOpen(false),
-    }}>
+    <GuideContext.Provider
+      value={{
+        openGuide: () => setIsOpen(true),
+        closeGuide: () => setIsOpen(false),
+      }}
+    >
       {children}
       <UserGuide isOpen={isOpen} onClose={() => setIsOpen(false)} />
     </GuideContext.Provider>
@@ -335,18 +343,18 @@ function HelpButton() {
 ```tsx
 const featuresWithVideos: FeatureSection[] = [
   {
-    id: 'analytics',
-    title: 'Analytics',
-    description: 'Learn about our analytics features',
+    id: "analytics",
+    title: "Analytics",
+    description: "Learn about our analytics features",
     icon: <AnalyticsIcon />,
-    thumbnail: '/images/analytics-thumb.jpg',
-    videoUrl: 'dQw4w9WgXcQ' // YouTube video ID
-  }
+    thumbnail: "/images/analytics-thumb.jpg",
+    videoUrl: "dQw4w9WgXcQ", // YouTube video ID
+  },
 ];
 
 // In useUserGuide.ts, modify handlePlayVideo:
 const handlePlayVideo = (featureId: string) => {
-  const feature = features.find(f => f.id === featureId);
+  const feature = features.find((f) => f.id === featureId);
   const videoId = feature?.videoUrl || DEFAULT_YOUTUBE_VIDEO_ID;
   setCurrentVideo(videoId);
   setVideoPlayerOpen(true);
@@ -381,7 +389,7 @@ The component is fully typed with TypeScript. Key interfaces:
 
 ```tsx
 // Import types for custom implementations
-import { FeatureSection } from './components/UserGuide/constants';
+import { FeatureSection } from "./components/UserGuide/constants";
 
 // Use in your components
 const myFeatures: FeatureSection[] = [
@@ -394,21 +402,23 @@ const myFeatures: FeatureSection[] = [
 ### Common Issues
 
 **Issue**: Guide doesn't open
+
 ```tsx
 // Ensure state is properly managed
 const [isOpen, setIsOpen] = useState(false);
 
 // Check if onClose is called somewhere unexpectedly
-<UserGuide 
-  isOpen={isOpen} 
+<UserGuide
+  isOpen={isOpen}
   onClose={() => {
-    console.log('Guide closing'); // Debug log
+    console.log("Guide closing"); // Debug log
     setIsOpen(false);
-  }} 
-/>
+  }}
+/>;
 ```
 
 **Issue**: Videos don't autoplay
+
 ```tsx
 // Modern browsers require mute for autoplay
 // Current implementation: autoplay=1&mute=1
@@ -416,6 +426,7 @@ const [isOpen, setIsOpen] = useState(false);
 ```
 
 **Issue**: Styling issues
+
 ```tsx
 // Ensure Tailwind CSS is properly configured
 // Add custom scrollbar styles to global CSS
@@ -423,6 +434,7 @@ const [isOpen, setIsOpen] = useState(false);
 ```
 
 **Issue**: Mobile scrolling problems
+
 ```tsx
 // Check viewport meta tag in HTML
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -434,12 +446,12 @@ const [isOpen, setIsOpen] = useState(false);
 
 ```tsx
 // Lazy load the guide component
-const UserGuide = lazy(() => import('./components/UserGuide'));
+const UserGuide = lazy(() => import("./components/UserGuide"));
 
 // Use with Suspense
 <Suspense fallback={<div>Loading guide...</div>}>
   <UserGuide isOpen={isOpen} onClose={onClose} />
-</Suspense>
+</Suspense>;
 ```
 
 ### Browser Compatibility
@@ -463,7 +475,7 @@ This component is part of the project and follows the same license terms.
 
 ---
 
-**Need Help?** 
+**Need Help?**
 
 - Check the examples above
 - Review the component source code

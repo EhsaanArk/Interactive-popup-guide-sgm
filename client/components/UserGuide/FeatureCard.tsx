@@ -1,5 +1,5 @@
-import type { FeatureSection } from './constants';
-import { playIcon } from './constants';
+import type { FeatureSection } from "./constants";
+import { playIcon } from "./constants";
 
 interface FeatureCardProps {
   feature: FeatureSection;
@@ -7,14 +7,18 @@ interface FeatureCardProps {
   onPlayVideo: (featureId: string) => void;
 }
 
-export default function FeatureCard({ feature, isHighlighted, onPlayVideo }: FeatureCardProps) {
+export default function FeatureCard({
+  feature,
+  isHighlighted,
+  onPlayVideo,
+}: FeatureCardProps) {
   return (
     <div
       id={`mobile-feature-${feature.id}`}
       className={`p-4 rounded-xl border transition-all duration-300 ${
         isHighlighted
-          ? 'bg-[#50BBFF]/5 border-[#50BBFF]/30'
-          : 'bg-[#131313] border-[#2C2C2C]'
+          ? "bg-[#50BBFF]/5 border-[#50BBFF]/30"
+          : "bg-[#131313] border-[#2C2C2C]"
       }`}
     >
       <div className="flex flex-col gap-3">
@@ -36,7 +40,7 @@ export default function FeatureCard({ feature, isHighlighted, onPlayVideo }: Fea
             className="w-full h-full object-cover"
             onError={(e) => {
               const target = e.target as HTMLImageElement;
-              target.style.display = 'none';
+              target.style.display = "none";
             }}
           />
           <div className="absolute inset-0 bg-black/20" />
@@ -45,9 +49,7 @@ export default function FeatureCard({ feature, isHighlighted, onPlayVideo }: Fea
             className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-14 h-14 bg-gradient-to-r from-[#0095F3] to-[#00E8B8] rounded-full flex items-center justify-center hover:scale-110 transition-all duration-200 shadow-lg"
             aria-label={`Play ${feature.title} video`}
           >
-            <div className="ml-1">
-              {playIcon}
-            </div>
+            <div className="ml-1">{playIcon}</div>
           </button>
         </div>
       </div>

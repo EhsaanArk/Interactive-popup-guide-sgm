@@ -1,4 +1,4 @@
-import { X } from 'lucide-react';
+import { X } from "lucide-react";
 
 interface VideoPlayerProps {
   isOpen: boolean;
@@ -6,7 +6,11 @@ interface VideoPlayerProps {
   onClose: () => void;
 }
 
-export default function VideoPlayer({ isOpen, videoId, onClose }: VideoPlayerProps) {
+export default function VideoPlayer({
+  isOpen,
+  videoId,
+  onClose,
+}: VideoPlayerProps) {
   if (!isOpen) return null;
 
   return (
@@ -19,7 +23,7 @@ export default function VideoPlayer({ isOpen, videoId, onClose }: VideoPlayerPro
         >
           <X size={20} strokeWidth={2.5} />
         </button>
-        <div className="relative w-full" style={{ paddingBottom: '56.25%' }}>
+        <div className="relative w-full" style={{ paddingBottom: "56.25%" }}>
           <iframe
             src={`https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1&rel=0&modestbranding=1&enablejsapi=1&iv_load_policy=3&cc_load_policy=0&playsinline=1&widget_referrer=${encodeURIComponent(window.location.origin)}`}
             title="Tutorial Video"

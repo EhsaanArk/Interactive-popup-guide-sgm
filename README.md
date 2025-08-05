@@ -5,12 +5,14 @@ A lightweight, interactive user guide component built as a pure static React app
 ## 🚀 Quick Start
 
 ### Development
+
 ```bash
 npm install
 npm run dev
 ```
 
 ### Build for Production
+
 ```bash
 npm run build
 ```
@@ -64,6 +66,7 @@ This is a static site that can be deployed to:
 - **Any CDN/Static Host** - Upload the `dist` folder contents
 
 ### Build Commands for Hosting Services:
+
 - **Build Command**: `npm run build`
 - **Output Directory**: `dist`
 
