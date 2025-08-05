@@ -32,10 +32,11 @@ This is a **pure static frontend component** with minimal dependencies. Ensure y
 
 ```json
 {
-  "react": "^18.0.0",
-  "react-dom": "^18.0.0",
-  "lucide-react": "^0.400.0",
-  "tailwindcss": "^3.4.0"
+  "react": "^18.3.1",
+  "react-dom": "^18.3.1",
+  "react-router-dom": "^6.26.2",
+  "lucide-react": "^0.462.0",
+  "tailwindcss": "^3.4.11"
 }
 ```
 
