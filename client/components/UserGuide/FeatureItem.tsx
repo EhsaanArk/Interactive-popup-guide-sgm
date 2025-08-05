@@ -54,7 +54,7 @@ export function FeatureContent({
             {feature.description}
           </p>
         </div>
-        <div className="relative w-[400px] h-[225px] bg-[#131313] rounded-lg border border-[#2C2C2C] flex-shrink-0 overflow-hidden">
+        <div className="relative w-[320px] lg:w-[350px] xl:w-[400px] h-[180px] lg:h-[200px] xl:h-[225px] bg-[#131313] rounded-lg border border-[#2C2C2C] flex-shrink-0 overflow-hidden">
           <img
             src={feature.thumbnail}
             alt={feature.title}
