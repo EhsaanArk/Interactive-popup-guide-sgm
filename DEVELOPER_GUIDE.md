@@ -28,7 +28,7 @@ A comprehensive, interactive user guide component for React applications with vi
 
 ### Prerequisites
 
-Ensure your project has the following dependencies:
+This is a **pure static frontend component** with minimal dependencies. Ensure your React project has:
 
 ```json
 {
@@ -38,6 +38,8 @@ Ensure your project has the following dependencies:
   "tailwindcss": "^3.4.0"
 }
 ```
+
+**No backend, server, or API dependencies required!**
 
 ### 1. Copy Component Files
 
