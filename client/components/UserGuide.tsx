@@ -191,37 +191,33 @@ export default function UserGuide({ isOpen, onClose, features = defaultFeatures 
             </div>
           </div>
 
-          {/* Main Content - All Features Visible */}
-          <div className="flex-1 p-4 sm:p-6 lg:p-8 overflow-y-auto custom-scrollbar">
-            <div className="space-y-6 lg:space-y-8">
+          {/* Main Content - Adaptive Layout */}
+          <div className="flex-1 p-5 sm:p-6 lg:p-8 overflow-y-auto custom-scrollbar">
+            <div className="space-y-6">
               {features.map((feature) => (
                 <div
                   key={feature.id}
                   id={`feature-${feature.id}`}
-                  className={`scroll-mt-4 transition-all duration-500 ${
+                  className={`transition-all duration-500 ${
                     highlightedFeature === feature.id
                       ? 'bg-[#50BBFF]/5 border border-[#50BBFF]/20 rounded-lg p-3'
-                      : 'p-3'
+                      : ''
                   }`}
                 >
-                  <div className="flex flex-col lg:flex-row lg:items-start gap-4 lg:gap-5">
-                    <div className="flex flex-col gap-2">
-                      <div className="flex items-center gap-2 lg:gap-3 mb-2">
-                        <div className="w-7 h-7 lg:w-8 lg:h-8 rounded bg-[#303030] flex items-center justify-center flex-shrink-0">
-                          <div className="scale-75 lg:scale-100">
-                            {feature.icon}
-                          </div>
-                        </div>
-                        <h2 className="text-sm lg:text-sm font-semibold text-white font-poppins tracking-wide">
-                          {feature.title}
-                        </h2>
+                  {/* Mobile & Tablet: Vertical Layout */}
+                  <div className="flex flex-col gap-3 lg:hidden">
+                    <div className="flex items-center gap-3">
+                      <div className="w-8 h-8 rounded bg-[#303030] flex items-center justify-center flex-shrink-0">
+                        {feature.icon}
                       </div>
-                      <p className="text-xs font-normal text-gray-400 font-poppins tracking-wide leading-relaxed max-w-full lg:max-w-md">
-                        {feature.description}
-                      </p>
+                      <h2 className="text-sm font-semibold text-white font-poppins tracking-wide">
+                        {feature.title}
+                      </h2>
                     </div>
-
-                    <div className="relative w-full lg:w-[400px] h-48 lg:h-[225px] bg-[#131313] rounded-lg border border-[#2C2C2C] flex-shrink-0 overflow-hidden">
+                    <p className="text-xs text-gray-400 font-poppins tracking-wide leading-relaxed">
+                      {feature.description}
+                    </p>
+                    <div className="relative w-full h-[225px] bg-[#131313] rounded-lg border border-[#2C2C2C] overflow-hidden">
                       <img
                         src={feature.thumbnail}
                         alt={feature.title}
@@ -233,12 +229,45 @@ export default function UserGuide({ isOpen, onClose, features = defaultFeatures 
                       />
                       <button
                         onClick={() => handlePlayVideo(feature.id)}
-                        className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-10 h-8 lg:w-12 lg:h-10 bg-gradient-to-r from-[#0095F3] to-[#00E8B8] rounded flex items-center justify-center hover:opacity-90 transition-opacity"
+                        className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-12 h-10 bg-gradient-to-r from-[#0095F3] to-[#00E8B8] rounded flex items-center justify-center hover:opacity-90 transition-opacity"
                         aria-label={`Play ${feature.title} video`}
                       >
-                        <div className="scale-75 lg:scale-100">
-                          {playIcon}
+                        {playIcon}
+                      </button>
+                    </div>
+                  </div>
+
+                  {/* Desktop: Horizontal Layout */}
+                  <div className="hidden lg:flex lg:items-start gap-5">
+                    <div className="flex flex-col gap-2">
+                      <div className="flex items-center gap-3 mb-2">
+                        <div className="w-8 h-8 rounded bg-[#303030] flex items-center justify-center flex-shrink-0">
+                          {feature.icon}
                         </div>
+                        <h2 className="text-sm font-semibold text-white font-poppins tracking-wide">
+                          {feature.title}
+                        </h2>
+                      </div>
+                      <p className="text-xs text-gray-400 font-poppins tracking-wide leading-relaxed max-w-md">
+                        {feature.description}
+                      </p>
+                    </div>
+                    <div className="relative w-[400px] h-[225px] bg-[#131313] rounded-lg border border-[#2C2C2C] flex-shrink-0 overflow-hidden">
+                      <img
+                        src={feature.thumbnail}
+                        alt={feature.title}
+                        className="w-full h-full object-cover rounded-lg"
+                        onError={(e) => {
+                          const target = e.target as HTMLImageElement;
+                          target.style.display = 'none';
+                        }}
+                      />
+                      <button
+                        onClick={() => handlePlayVideo(feature.id)}
+                        className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-12 h-10 bg-gradient-to-r from-[#0095F3] to-[#00E8B8] rounded flex items-center justify-center hover:opacity-90 transition-opacity"
+                        aria-label={`Play ${feature.title} video`}
+                      >
+                        {playIcon}
                       </button>
                     </div>
                   </div>
