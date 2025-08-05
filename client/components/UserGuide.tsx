@@ -210,8 +210,8 @@ export default function UserGuide({ isOpen, onClose, features = defaultFeatures 
 
           {/* Main Content - Adaptive Layout */}
           <div className="flex-1 overflow-y-auto custom-scrollbar">
-            {/* Mobile: Scrollable card-based layout */}
-            <div className="lg:hidden p-4 space-y-4">
+            {/* Mobile/Tablet: Scrollable card-based layout */}
+            <div className="xl:hidden p-4 space-y-4 min-h-0">
               {features.map((feature) => (
                 <div
                   key={feature.id}
