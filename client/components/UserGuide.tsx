@@ -206,20 +206,15 @@ export default function UserGuide({ isOpen, onClose, features = defaultFeatures 
           </div>
 
           {/* Main Content - Adaptive Layout */}
-          <div className="flex-1 p-5 sm:p-6 lg:p-8 overflow-y-auto custom-scrollbar">
-            <div className="space-y-6">
+          <div className="flex-1 overflow-y-auto custom-scrollbar">
+            {/* Mobile: Show only selected feature */}
+            <div className="lg:hidden">
               {features.map((feature) => (
                 <div
                   key={feature.id}
-                  id={`feature-${feature.id}`}
-                  className={`transition-all duration-500 ${
-                    highlightedFeature === feature.id
-                      ? 'bg-[#50BBFF]/5 border border-[#50BBFF]/20 rounded-lg p-3'
-                      : ''
-                  }`}
+                  className={`${selectedFeature === feature.id ? 'block p-5' : 'hidden'}`}
                 >
-                  {/* Mobile & Tablet: Vertical Layout */}
-                  <div className="flex flex-col gap-3 lg:hidden">
+                  <div className="flex flex-col gap-4">
                     <div className="flex items-center gap-3">
                       <div className="w-8 h-8 rounded bg-[#303030] flex items-center justify-center flex-shrink-0">
                         {feature.icon}
