@@ -21,7 +21,7 @@ export default function VideoPlayer({ isOpen, videoId, onClose }: VideoPlayerPro
         </button>
         <div className="relative w-full" style={{ paddingBottom: '56.25%' }}>
           <iframe
-            src={`https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1&rel=0&modestbranding=1&enablejsapi=1`}
+            src={`https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1&rel=0&modestbranding=1&enablejsapi=1&iv_load_policy=3&cc_load_policy=0&playsinline=1&widget_referrer=${encodeURIComponent(window.location.origin)}`}
             title="Tutorial Video"
             className="absolute inset-0 w-full h-full"
             frameBorder="0"
