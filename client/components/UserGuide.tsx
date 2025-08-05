@@ -121,11 +121,11 @@ export default function UserGuide({ isOpen, onClose, features = defaultFeatures 
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm p-2 sm:p-4">
-      <div className="relative w-full max-w-6xl h-full max-h-[95vh] bg-[#202020] rounded-lg shadow-2xl overflow-hidden flex flex-col">
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm p-0 sm:p-2 lg:p-4">
+      <div className="relative w-full h-full sm:max-w-md sm:h-auto lg:max-w-6xl lg:max-h-[95vh] bg-[#202020] sm:rounded-lg lg:rounded-lg shadow-2xl overflow-hidden flex flex-col">
         {/* Header - Fixed at top */}
-        <div className="flex items-center justify-between p-4 sm:p-6 lg:p-8 border-b border-gray-700 flex-shrink-0 bg-[#202020] rounded-t-lg">
-          <h1 className="text-base sm:text-lg font-normal text-white font-poppins tracking-wide">
+        <div className="flex items-center justify-between p-5 sm:p-6 lg:p-8 border-b border-gray-700 flex-shrink-0 bg-[#202020] sm:rounded-t-lg lg:rounded-t-lg">
+          <h1 className="text-lg font-normal text-white font-poppins tracking-wide">
             Welcome to Dashboard
           </h1>
           <button
@@ -133,11 +133,11 @@ export default function UserGuide({ isOpen, onClose, features = defaultFeatures 
             className="p-2 text-gray-400 hover:text-white hover:bg-gray-700/50 rounded-lg transition-all duration-200 flex items-center justify-center"
             aria-label="Close guide"
           >
-            <X size={24} className="sm:w-6 sm:h-6" />
+            <X size={24} />
           </button>
         </div>
 
-        {/* Content Area - Scrollable */}
+        {/* Content Area - Mobile: Single column, Desktop: Sidebar + Content */}
         <div className="flex flex-col lg:flex-row flex-1 min-h-0">
           {/* Sidebar */}
           <div className="w-full lg:w-80 p-4 sm:p-6 lg:p-8 border-r-0 lg:border-r border-b lg:border-b-0 border-gray-700 flex flex-col lg:max-h-none max-h-48 lg:overflow-visible overflow-y-auto">
