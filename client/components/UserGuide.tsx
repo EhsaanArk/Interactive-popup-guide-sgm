@@ -192,7 +192,11 @@ export default function UserGuide({ isOpen, onClose, features = defaultFeatures 
                 <div
                   key={feature.id}
                   id={`feature-${feature.id}`}
-                  className="scroll-mt-4"
+                  className={`scroll-mt-4 transition-all duration-500 ${
+                    highlightedFeature === feature.id
+                      ? 'bg-[#50BBFF]/5 border border-[#50BBFF]/20 rounded-lg p-3'
+                      : 'p-3'
+                  }`}
                 >
                   <div className="flex flex-col lg:flex-row lg:items-start gap-4 lg:gap-5">
                     <div className="flex flex-col gap-2">
