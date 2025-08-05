@@ -258,7 +258,7 @@ export default function UserGuide({ isOpen, onClose, features = defaultFeatures 
                 setVideoPlayerOpen(false);
                 setCurrentVideo('');
               }}
-              className="absolute -top-2 -right-2 z-20 w-10 h-10 bg-white text-gray-800 hover:bg-gray-100 hover:text-black rounded-full shadow-lg transition-all duration-200 flex items-center justify-center border-2 border-gray-200"
+              className="absolute -top-2 -right-2 z-20 w-10 h-10 bg-gradient-to-r from-[#0095F3] to-[#00E8B8] text-white hover:from-blue-600 hover:to-cyan-500 rounded-full shadow-lg transition-all duration-200 flex items-center justify-center"
               aria-label="Close video"
             >
               <X size={20} strokeWidth={2.5} />
