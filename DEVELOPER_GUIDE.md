@@ -45,7 +45,7 @@ Copy the following files to your project:
 
 ```
 src/components/
-���── UserGuide.tsx
+├── UserGuide.tsx
 └── UserGuide/
     ├── constants.tsx
     ├── useUserGuide.ts
@@ -208,8 +208,9 @@ export const defaultFeatures: FeatureSection[] = [
     title: 'Your Feature',
     description: 'Description of your feature...',
     icon: (
-      <svg>
-        {/* Your custom SVG */}
+      <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M10 2L13 8H18L14 12L16 18L10 15L4 18L6 12L2 8H7L10 2Z"
+              fill="#E9E9E9" stroke="#E9E9E9" strokeWidth="1"/>
       </svg>
     ),
     thumbnail: 'https://your-domain.com/image.jpg'
