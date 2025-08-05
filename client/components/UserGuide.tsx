@@ -115,11 +115,11 @@ export default function UserGuide({ isOpen, onClose, features = defaultFeatures 
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm">
-      <div className="relative w-full max-w-6xl h-full max-h-[95vh] m-4 bg-[#202020] rounded-lg shadow-2xl overflow-hidden">
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm p-2 sm:p-4">
+      <div className="relative w-full max-w-6xl h-full max-h-[95vh] bg-[#202020] rounded-lg shadow-2xl overflow-hidden">
         {/* Header */}
-        <div className="flex items-center justify-between p-8 border-b border-gray-700">
-          <h1 className="text-lg font-normal text-white font-poppins tracking-wide">
+        <div className="flex items-center justify-between p-4 sm:p-6 lg:p-8 border-b border-gray-700">
+          <h1 className="text-base sm:text-lg font-normal text-white font-poppins tracking-wide">
             Welcome to Dashboard
           </h1>
           <button
@@ -127,13 +127,13 @@ export default function UserGuide({ isOpen, onClose, features = defaultFeatures 
             className="p-1 text-gray-400 hover:text-white transition-colors"
             aria-label="Close guide"
           >
-            <X size={24} />
+            <X size={20} className="sm:w-6 sm:h-6" />
           </button>
         </div>
 
-        <div className="flex h-full">
+        <div className="flex flex-col lg:flex-row h-full">
           {/* Sidebar */}
-          <div className="w-80 p-8 border-r border-gray-700 flex flex-col">
+          <div className="w-full lg:w-80 p-4 sm:p-6 lg:p-8 border-r-0 lg:border-r border-b lg:border-b-0 border-gray-700 flex flex-col">
             <div className="mb-14">
               <h3 className="text-xs font-normal text-gray-400 font-poppins tracking-wide mb-3">
                 Key Features
