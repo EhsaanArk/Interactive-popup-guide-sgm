@@ -100,11 +100,16 @@ const playIcon = (
 export default function UserGuide({ isOpen, onClose, features = defaultFeatures }: UserGuideProps) {
   const [selectedFeature, setSelectedFeature] = useState<string>(features[0]?.id || '');
   const [highlightedFeature, setHighlightedFeature] = useState<string>('');
+  const [videoPlayerOpen, setVideoPlayerOpen] = useState<boolean>(false);
+  const [currentVideo, setCurrentVideo] = useState<string>('');
 
   if (!isOpen) return null;
 
   const handlePlayVideo = (featureId: string) => {
-    console.log(`Playing video for ${featureId}`);
+    // For demo purposes, using the same YouTube video for all features
+    const youtubeVideoId = '4QdLCFOgTUQ';
+    setCurrentVideo(youtubeVideoId);
+    setVideoPlayerOpen(true);
   };
 
   const handleTakeTour = () => {
