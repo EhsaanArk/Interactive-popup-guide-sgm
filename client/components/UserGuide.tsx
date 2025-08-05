@@ -180,7 +180,7 @@ export default function UserGuide({ isOpen, onClose, features = defaultFeatures 
           </div>
 
           {/* Main Content - All Features Visible */}
-          <div className="flex-1 p-4 sm:p-6 lg:p-8 overflow-y-auto">
+          <div className="flex-1 p-4 sm:p-6 lg:p-8 overflow-y-auto custom-scrollbar">
             <div className="space-y-6 lg:space-y-8">
               {features.map((feature) => (
                 <div
