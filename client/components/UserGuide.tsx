@@ -125,10 +125,10 @@ export default function UserGuide({ isOpen, onClose, features = defaultFeatures 
           </h1>
           <button
             onClick={onClose}
-            className="p-1 text-gray-400 hover:text-white transition-colors"
+            className="p-2 text-gray-400 hover:text-white hover:bg-gray-700/50 rounded-lg transition-all duration-200 flex items-center justify-center"
             aria-label="Close guide"
           >
-            <X size={20} className="sm:w-6 sm:h-6" />
+            <X size={24} className="sm:w-6 sm:h-6" />
           </button>
         </div>
 
