@@ -121,8 +121,8 @@ export default function UserGuide({ isOpen, onClose, features = defaultFeatures 
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm p-0 sm:p-2 lg:p-4">
-      <div className="relative w-full h-full sm:max-w-md sm:h-auto lg:max-w-6xl lg:max-h-[95vh] bg-[#202020] sm:rounded-lg lg:rounded-lg shadow-2xl overflow-hidden flex flex-col">
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm p-0 sm:p-2 xl:p-4">
+      <div className="relative w-full h-full sm:max-w-2xl sm:h-auto xl:max-w-6xl xl:max-h-[95vh] bg-[#202020] sm:rounded-lg xl:rounded-lg shadow-2xl overflow-hidden flex flex-col">
         {/* Header - Fixed at top */}
         <div className="flex items-center justify-between p-5 sm:p-6 lg:p-8 border-b border-gray-700 flex-shrink-0 bg-[#202020] sm:rounded-t-lg lg:rounded-t-lg">
           <h1 className="text-lg font-normal text-white font-poppins tracking-wide">
