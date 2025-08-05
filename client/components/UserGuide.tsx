@@ -155,9 +155,9 @@ export default function UserGuide({ isOpen, onClose, features = defaultFeatures 
         </div>
 
         {/* Content Area - Mobile: Single column, Desktop: Sidebar + Content */}
-        <div className="flex flex-col lg:flex-row flex-1 min-h-0">
-          {/* Sidebar - Hidden on mobile, visible on desktop */}
-          <div className="hidden lg:flex lg:w-80 p-8 border-r border-gray-700 flex-col">
+        <div className="flex flex-col xl:flex-row flex-1 min-h-0">
+          {/* Sidebar - Hidden on mobile/tablet, visible on desktop */}
+          <div className="hidden xl:flex xl:w-80 p-8 border-r border-gray-700 flex-col">
             <div className="mb-14">
               <h3 className="text-xs font-normal text-gray-400 font-poppins tracking-wide mb-3">
                 Key Features
