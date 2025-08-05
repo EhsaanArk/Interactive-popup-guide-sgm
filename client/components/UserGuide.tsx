@@ -116,8 +116,8 @@ export default function UserGuide({
                 ))}
               </div>
 
-              {/* Desktop: Content Layout */}
-              <div className="hidden xl:block p-8">
+              {/* Tablet/Desktop: Content Layout */}
+              <div className="hidden lg:block p-6 lg:p-7 xl:p-8">
                 <div className="space-y-8">
                   {features.map((feature) => (
                     <FeatureContent
