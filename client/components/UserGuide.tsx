@@ -35,7 +35,7 @@ export default function UserGuide({
       <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm p-0 sm:p-2 lg:p-3 xl:p-4">
         <div className="relative w-full h-full sm:max-w-2xl sm:max-h-[90vh] sm:h-auto lg:max-w-5xl lg:max-h-[92vh] xl:max-w-6xl xl:max-h-[95vh] bg-[#202020] sm:rounded-lg lg:rounded-lg xl:rounded-lg shadow-2xl overflow-hidden flex flex-col">
           {/* Header */}
-          <header className="flex items-center justify-between p-5 sm:p-6 xl:p-8 border-b border-gray-700 flex-shrink-0 bg-[#202020] sm:rounded-t-lg xl:rounded-t-lg">
+          <header className="flex items-center justify-between p-5 sm:p-6 lg:p-7 xl:p-8 border-b border-gray-700 flex-shrink-0 bg-[#202020] sm:rounded-t-lg lg:rounded-t-lg xl:rounded-t-lg">
             <h1 className="text-lg font-normal text-white font-poppins tracking-wide">
               Welcome to Dashboard
             </h1>
