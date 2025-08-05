@@ -1,6 +1,6 @@
 # UserGuide Component - Developer Integration Guide
 
-A comprehensive, interactive user guide component for React applications with video tutorials, responsive design, and customizable content.
+A comprehensive, interactive user guide component for React applications with video tutorials, responsive design, and customizable content. **This is a pure static frontend component with zero backend dependencies** - perfect for integrating into your existing SaaS application.
 
 ## 📋 Table of Contents
 
