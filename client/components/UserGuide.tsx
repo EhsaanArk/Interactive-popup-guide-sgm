@@ -139,13 +139,13 @@ export default function UserGuide({ isOpen, onClose, features = defaultFeatures 
 
         {/* Content Area - Mobile: Single column, Desktop: Sidebar + Content */}
         <div className="flex flex-col lg:flex-row flex-1 min-h-0">
-          {/* Sidebar */}
-          <div className="w-full lg:w-80 p-4 sm:p-6 lg:p-8 border-r-0 lg:border-r border-b lg:border-b-0 border-gray-700 flex flex-col lg:max-h-none max-h-48 lg:overflow-visible overflow-y-auto">
-            <div className="mb-6 lg:mb-14">
+          {/* Sidebar - Hidden on mobile, visible on desktop */}
+          <div className="hidden lg:flex lg:w-80 p-8 border-r border-gray-700 flex-col">
+            <div className="mb-14">
               <h3 className="text-xs font-normal text-gray-400 font-poppins tracking-wide mb-3">
                 Key Features
               </h3>
-              <nav className="grid grid-cols-2 lg:grid-cols-1 gap-2 lg:space-y-3 lg:gap-0">
+              <nav className="space-y-3">
                 {features.map((feature) => (
                   <button
                     key={feature.id}
@@ -156,16 +156,16 @@ export default function UserGuide({ isOpen, onClose, features = defaultFeatures 
                       setHighlightedFeature(feature.id);
                       setTimeout(() => setHighlightedFeature(''), 1500);
 
-                      // Scroll to the feature on mobile/tablet
+                      // Scroll to the feature
                       const element = document.getElementById(`feature-${feature.id}`);
                       if (element) {
                         element.scrollIntoView({ behavior: 'smooth', block: 'start' });
                       }
                     }}
-                    className={`block text-left text-xs sm:text-sm font-normal font-poppins tracking-wide transition-colors p-2 lg:p-0 rounded lg:rounded-none ${
+                    className={`block text-left text-sm font-normal font-poppins tracking-wide transition-colors ${
                       selectedFeature === feature.id
-                        ? 'text-[#50BBFF] bg-[#50BBFF]/10 lg:bg-transparent'
-                        : 'text-white hover:text-[#50BBFF] hover:bg-[#50BBFF]/5 lg:hover:bg-transparent'
+                        ? 'text-[#50BBFF]'
+                        : 'text-white hover:text-[#50BBFF]'
                     }`}
                   >
                     {feature.title}
@@ -174,18 +174,18 @@ export default function UserGuide({ isOpen, onClose, features = defaultFeatures 
               </nav>
             </div>
 
-            <div className="mt-auto space-y-3 lg:space-y-4">
+            <div className="mt-auto space-y-4">
               <button
                 onClick={handleTakeTour}
-                className="w-full h-9 lg:h-10 px-4 bg-gradient-to-r from-[#0095F3] to-[#00E8B8] rounded text-white text-xs sm:text-sm font-semibold font-poppins tracking-wide hover:opacity-90 transition-opacity"
+                className="w-full h-10 px-4 bg-gradient-to-r from-[#0095F3] to-[#00E8B8] rounded text-white text-sm font-semibold font-poppins tracking-wide hover:opacity-90 transition-opacity"
               >
                 Take a tour
               </button>
               <button
                 onClick={handleKnowledgeBase}
-                className="w-full flex items-center justify-center gap-2 lg:gap-3 text-[#50BBFF] text-xs sm:text-sm font-semibold font-poppins tracking-wide hover:opacity-80 transition-opacity"
+                className="w-full flex items-center justify-center gap-3 text-[#50BBFF] text-sm font-semibold font-poppins tracking-wide hover:opacity-80 transition-opacity"
               >
-                <Book size={14} className="sm:w-4 sm:h-4" />
+                <Book size={16} />
                 Knowledge Base
               </button>
             </div>
