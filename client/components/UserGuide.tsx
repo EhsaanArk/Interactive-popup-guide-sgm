@@ -137,8 +137,8 @@ export default function UserGuide({ isOpen, onClose, features = defaultFeatures 
           </button>
         </div>
 
-        {/* Mobile Quick Actions */}
-        <div className="lg:hidden flex items-center justify-between px-5 py-3 border-b border-gray-700 bg-[#202020]">
+        {/* Mobile/Tablet Quick Actions */}
+        <div className="xl:hidden flex items-center justify-between px-5 py-3 border-b border-gray-700 bg-[#202020]">
           <button
             onClick={handleTakeTour}
             className="px-4 py-2 bg-gradient-to-r from-[#0095F3] to-[#00E8B8] rounded text-white text-xs font-semibold font-poppins hover:opacity-90 transition-opacity"
