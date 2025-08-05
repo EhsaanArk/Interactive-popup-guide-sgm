@@ -258,10 +258,10 @@ export default function UserGuide({ isOpen, onClose, features = defaultFeatures 
                 setVideoPlayerOpen(false);
                 setCurrentVideo('');
               }}
-              className="absolute top-4 right-4 z-10 p-2 text-white hover:text-gray-300 hover:bg-black/50 rounded-lg transition-all duration-200"
+              className="absolute -top-2 -right-2 z-20 w-10 h-10 bg-white text-gray-800 hover:bg-gray-100 hover:text-black rounded-full shadow-lg transition-all duration-200 flex items-center justify-center border-2 border-gray-200"
               aria-label="Close video"
             >
-              <X size={24} />
+              <X size={20} strokeWidth={2.5} />
             </button>
             <div className="relative w-full" style={{ paddingBottom: '56.25%' }}>
               <iframe
