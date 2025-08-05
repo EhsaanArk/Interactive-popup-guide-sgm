@@ -99,6 +99,7 @@ const playIcon = (
 
 export default function UserGuide({ isOpen, onClose, features = defaultFeatures }: UserGuideProps) {
   const [selectedFeature, setSelectedFeature] = useState<string>(features[0]?.id || '');
+  const [highlightedFeature, setHighlightedFeature] = useState<string>('');
 
   if (!isOpen) return null;
 
