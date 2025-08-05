@@ -133,8 +133,8 @@ export default function UserGuide({ isOpen, onClose, features = defaultFeatures 
 
         <div className="flex flex-col lg:flex-row h-full">
           {/* Sidebar */}
-          <div className="w-full lg:w-80 p-4 sm:p-6 lg:p-8 border-r-0 lg:border-r border-b lg:border-b-0 border-gray-700 flex flex-col">
-            <div className="mb-8 lg:mb-14">
+          <div className="w-full lg:w-80 p-4 sm:p-6 lg:p-8 border-r-0 lg:border-r border-b lg:border-b-0 border-gray-700 flex flex-col lg:max-h-none max-h-48 lg:overflow-visible overflow-y-auto">
+            <div className="mb-6 lg:mb-14">
               <h3 className="text-xs font-normal text-gray-400 font-poppins tracking-wide mb-3">
                 Key Features
               </h3>
@@ -142,7 +142,14 @@ export default function UserGuide({ isOpen, onClose, features = defaultFeatures 
                 {features.map((feature) => (
                   <button
                     key={feature.id}
-                    onClick={() => setSelectedFeature(feature.id)}
+                    onClick={() => {
+                      setSelectedFeature(feature.id);
+                      // Scroll to the feature on mobile/tablet
+                      const element = document.getElementById(`feature-${feature.id}`);
+                      if (element) {
+                        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                      }
+                    }}
                     className={`block text-left text-xs sm:text-sm font-normal font-poppins tracking-wide transition-colors p-2 lg:p-0 rounded lg:rounded-none ${
                       selectedFeature === feature.id
                         ? 'text-[#50BBFF] bg-[#50BBFF]/10 lg:bg-transparent'
@@ -172,16 +179,17 @@ export default function UserGuide({ isOpen, onClose, features = defaultFeatures 
             </div>
           </div>
 
-          {/* Main Content */}
+          {/* Main Content - All Features Visible */}
           <div className="flex-1 p-4 sm:p-6 lg:p-8 overflow-y-auto">
-            <div className="space-y-4 lg:space-y-6">
+            <div className="space-y-6 lg:space-y-8">
               {features.map((feature) => (
                 <div
                   key={feature.id}
-                  className={`${selectedFeature === feature.id ? 'block' : 'hidden'}`}
+                  id={`feature-${feature.id}`}
+                  className="scroll-mt-4"
                 >
-                  <div className="flex flex-col lg:flex-row lg:items-start gap-4 lg:gap-5 mb-4 lg:mb-6">
-                    <div className="flex flex-col gap-2 lg:gap-2">
+                  <div className="flex flex-col lg:flex-row lg:items-start gap-4 lg:gap-5">
+                    <div className="flex flex-col gap-2">
                       <div className="flex items-center gap-2 lg:gap-3 mb-2">
                         <div className="w-7 h-7 lg:w-8 lg:h-8 rounded bg-[#303030] flex items-center justify-center flex-shrink-0">
                           <div className="scale-75 lg:scale-100">
