@@ -137,6 +137,20 @@ export default function UserGuide({ isOpen, onClose, features = defaultFeatures 
           </button>
         </div>
 
+        {/* Mobile Progress Indicator */}
+        <div className="lg:hidden px-5 py-3 border-b border-gray-700 bg-[#202020]">
+          <div className="flex items-center justify-between text-xs text-gray-400 font-poppins">
+            <span>{features.findIndex(f => f.id === selectedFeature) + 1} of {features.length}</span>
+            <span>{features.find(f => f.id === selectedFeature)?.title}</span>
+          </div>
+          <div className="mt-2 h-1 bg-gray-700 rounded-full overflow-hidden">
+            <div
+              className="h-full bg-gradient-to-r from-[#0095F3] to-[#00E8B8] transition-all duration-300"
+              style={{ width: `${((features.findIndex(f => f.id === selectedFeature) + 1) / features.length) * 100}%` }}
+            />
+          </div>
+        </div>
+
         {/* Content Area - Mobile: Single column, Desktop: Sidebar + Content */}
         <div className="flex flex-col lg:flex-row flex-1 min-h-0">
           {/* Sidebar - Hidden on mobile, visible on desktop */}
