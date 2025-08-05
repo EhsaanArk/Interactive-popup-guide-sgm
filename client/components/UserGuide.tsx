@@ -248,6 +248,34 @@ export default function UserGuide({ isOpen, onClose, features = defaultFeatures 
           </div>
         </div>
       </div>
+
+      {/* YouTube Video Player Modal */}
+      {videoPlayerOpen && (
+        <div className="fixed inset-0 z-[60] flex items-center justify-center bg-black/80 backdrop-blur-sm p-4">
+          <div className="relative w-full max-w-4xl bg-black rounded-lg overflow-hidden">
+            <button
+              onClick={() => {
+                setVideoPlayerOpen(false);
+                setCurrentVideo('');
+              }}
+              className="absolute top-4 right-4 z-10 p-2 text-white hover:text-gray-300 hover:bg-black/50 rounded-lg transition-all duration-200"
+              aria-label="Close video"
+            >
+              <X size={24} />
+            </button>
+            <div className="relative w-full" style={{ paddingBottom: '56.25%' }}>
+              <iframe
+                src={`https://www.youtube.com/embed/${currentVideo}?autoplay=1&rel=0&modestbranding=1`}
+                title="Tutorial Video"
+                className="absolute inset-0 w-full h-full"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              />
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
