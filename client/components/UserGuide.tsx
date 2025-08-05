@@ -261,7 +261,7 @@ export default function UserGuide({ isOpen, onClose, features = defaultFeatures 
             </div>
 
             {/* Desktop: Show all features */}
-            <div className="hidden lg:block p-8">
+            <div className="hidden xl:block p-8">
               <div className="space-y-8">
                 {features.map((feature) => (
                   <div
