@@ -145,6 +145,11 @@ export default function UserGuide({ isOpen, onClose, features = defaultFeatures 
                     key={feature.id}
                     onClick={() => {
                       setSelectedFeature(feature.id);
+
+                      // Add highlight effect
+                      setHighlightedFeature(feature.id);
+                      setTimeout(() => setHighlightedFeature(''), 1500);
+
                       // Scroll to the feature on mobile/tablet
                       const element = document.getElementById(`feature-${feature.id}`);
                       if (element) {
