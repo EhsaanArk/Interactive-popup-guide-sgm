@@ -104,8 +104,8 @@ export default function UserGuide({
 
             {/* Main Content */}
             <main className="flex-1 overflow-y-auto custom-scrollbar min-h-0">
-              {/* Mobile/Tablet: Card Layout */}
-              <div className="xl:hidden p-4 space-y-4">
+              {/* Mobile: Card Layout */}
+              <div className="lg:hidden p-4 space-y-4">
                 {features.map((feature) => (
                   <FeatureCard
                     key={feature.id}
