@@ -66,9 +66,9 @@ export default function UserGuide({
           </div>
 
           {/* Content Area */}
-          <div className="flex flex-col xl:flex-row flex-1 min-h-0">
+          <div className="flex flex-col lg:flex-row flex-1 min-h-0">
             {/* Desktop Sidebar */}
-            <aside className="hidden xl:flex xl:w-80 p-8 border-r border-gray-700 flex-col">
+            <aside className="hidden lg:flex lg:w-72 xl:w-80 p-6 lg:p-7 xl:p-8 border-r border-gray-700 flex-col">
               <div className="mb-14">
                 <h3 className="text-xs font-normal text-gray-400 font-poppins tracking-wide mb-3">
                   Key Features
